@@ -39,10 +39,6 @@ def run():
     if st.button("submit") and acc:
 
         features = [[Likes, Saves, Comments, Shares, Profile_Visits, follows]]
-
-        with open('Database.csv', 'a', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(features)
         Impressions = model.predict(features)
         st.write('HELLO ', name, " ! from the above given details , your impressions are ", Impressions)
 
